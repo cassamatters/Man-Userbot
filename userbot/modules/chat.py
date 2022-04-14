@@ -446,7 +446,7 @@ async def _(event):
 async def get_users(event):
     man_ = event.text[11:]
     chat_man = man_.lower()
-    restricted = ["@SharingUserbot", "@sharinguserbot"]
+    restricted = ["@", "@t"]
     if chat_man in restricted:
         await edit_or_reply(event, "**Anda tidak dapat Mengundang Anggota dari sana.**")
         await event.client.send_message(
@@ -515,9 +515,9 @@ async def admem(event):
     n = 0
     for user in users:
         n += 1
-        if n % 40 == 0:
+        if n % 20 == 0:
             await xx.edit(
-                f"**Sudah Mencapai 40 anggota, Tunggu Selama** `{900/60}` **menit**"
+                f"**Sudah Mencapai 20 anggota, Tunggu Selama** `{900/60}` **menit**"
             )
             await asyncio.sleep(900)
         try:
